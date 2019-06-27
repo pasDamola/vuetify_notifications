@@ -41,8 +41,11 @@
               </v-list-tile-avatar>
 
               <v-list-tile-content>
+                
+                <v-chip small :class="`${item.label}`">{{item.label}}</v-chip>
                 <v-list-tile-title v-html="item.title"></v-list-tile-title>
                 <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                
               </v-list-tile-content>
               
             </v-list-tile>
@@ -76,6 +79,7 @@
               </v-list-tile-avatar>
 
               <v-list-tile-content>
+                <v-chip small :class="`${item.label}`">{{item.label}}</v-chip>
                 <v-list-tile-title v-html="item.title"></v-list-tile-title>
                 <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
               </v-list-tile-content>
@@ -102,18 +106,21 @@
             avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
             title: 'Approved Vendor Recommendation',
             subtitle: "<span class='text--primary'>CEO</span> &mdash; Your vendor recommendation has been approved",
+            label: 'approved'
           },
           { divider: true, inset: true },
           {
             avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
             title: 'Approved Procurement plan',
-            subtitle: "<span class='text--primary'>HOP</span> &mdash; Procurement plan for the department has been approved."
+            subtitle: "<span class='text--primary'>HOP</span> &mdash; Procurement plan for the department has been approved.",
+            label: "approved"
           },
           { divider: true, inset: true },
           {
             avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
             title: 'Rejected Extra Budgetary',
-            subtitle: "<span class='text--primary'>CEO</span> &mdash; Provide valid justification for your extra budgetary plan"
+            subtitle: "<span class='text--primary'>CEO</span> &mdash; Provide valid justification for your extra budgetary plan",
+            label: "rejected"
           }
         ]
       }
@@ -124,5 +131,14 @@
 <style>
 #navigate{
  margin-left : 50%;
+}
+.v-chip.approved{
+  background : teal
+}
+.v-chip.rejected{
+  background : ornage
+}
+.v-chip.pending{
+  background : yellow
 }
 </style>
